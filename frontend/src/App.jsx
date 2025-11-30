@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom'
 import ProfileSetup from './components/ProfileSetup'
 import Dashboard from './components/Dashboard'
+import About from './components/About'
 import './App.css'
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <nav className="main-nav">
+          <Link to="/about" className="nav-link">About</Link>
+          {userId && <Link to="/dashboard" className="nav-link">Dashboard</Link>}
+        </nav>
         <Routes>
           <Route 
             path="/" 
@@ -33,6 +38,10 @@ function App() {
                 <Dashboard userId={parseInt(userId)} /> : 
                 <Navigate to="/" replace />
             } 
+          />
+          <Route 
+            path="/about" 
+            element={<About />} 
           />
         </Routes>
       </div>

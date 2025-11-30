@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { getApiUrl } from '../config'
 import './Dashboard.css'
 
@@ -175,6 +176,7 @@ function Dashboard({ userId }) {
               </div>
             </div>
           )}
+          <Link to="/about" className="about-link-button">About</Link>
           <button className="delete-user-button" onClick={handleDeleteUser}>
             Delete Account
           </button>

@@ -3,9 +3,44 @@
   padding: 2rem;
 }
 
+.main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #b8a9c9;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(45, 27, 61, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(232, 213, 227, 0.1);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #e8d5e3;
+  background: rgba(167, 139, 250, 0.2);
+  border-color: rgba(167, 139, 250, 0.4);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .app {
     padding: 1rem;
+  }
+
+  .main-nav {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
