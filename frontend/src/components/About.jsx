@@ -397,8 +397,8 @@ function About() {
           <div className="deployment-section">
             <h2>Deployment</h2>
             <p>
-              The application is configured for deployment on <strong>Render</strong> (free tier) 
-              or <strong>Railway</strong>. Both frontend and backend can be deployed separately:
+              The application can be deployed to various hosting platforms. Both frontend and backend 
+              can be deployed separately:
             </p>
             <ul>
               <li><strong>Backend:</strong> Python web service with Gunicorn</li>
@@ -406,7 +406,6 @@ function About() {
               <li><strong>Database:</strong> SQLite (can be upgraded to PostgreSQL for production)</li>
               <li><strong>Environment Variables:</strong> Configured for production CORS and API URLs</li>
             </ul>
-            <p>See <code>DEPLOYMENT.md</code> for detailed deployment instructions.</p>
           </div>
 
           <div className="conclusion">

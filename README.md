@@ -14,7 +14,7 @@ A web application that uses collaborative filtering and matrix factorization to 
 
 - **Frontend**: React + Vite
 - **Backend**: Flask (Python)
-- **ML Library**: Surprise (SVD for matrix factorization)
+- **ML**: NumPy, SciPy, Scikit-learn (SVD matrix factorization)
 - **Database**: SQLite
 
 ## Setup
