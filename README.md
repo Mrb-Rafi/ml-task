@@ -78,3 +78,42 @@ The app uses a dark pastel color scheme:
 - Text: Light pastels (#e8d5e3, #b8a9c9)
 - Accents: Soft purples and lavenders
 
+## Deployment
+
+### Deploying to Render
+
+This project is configured for deployment on Render using `render.yaml`.
+
+#### Backend Deployment
+The backend is already deployed at: https://ml-task.onrender.com/
+
+#### Frontend Deployment
+
+1. **Using Render Dashboard:**
+   - Go to your Render dashboard
+   - Click "New" → "Static Site"
+   - Connect your GitHub repository
+   - Configure:
+     - **Name:** course-recommender-frontend
+     - **Root Directory:** `frontend`
+     - **Build Command:** `npm install && npm run build`
+     - **Publish Directory:** `dist`
+   - Add Environment Variable:
+     - **Key:** `VITE_API_URL`
+     - **Value:** `https://ml-task.onrender.com`
+
+2. **Using render.yaml (Automatic):**
+   - The `render.yaml` file is already configured
+   - Render will automatically detect and deploy both services
+   - Make sure to set the `FRONTEND_URL` environment variable in your backend service to your frontend URL after deployment
+
+3. **Update Backend CORS:**
+   - In your Render backend dashboard, add/update environment variable:
+     - **Key:** `FRONTEND_URL`
+     - **Value:** Your frontend Render URL (e.g., `https://course-recommender-frontend.onrender.com`)
+
+#### After Deployment
+- Test API calls from your deployed frontend
+- Verify CORS is working correctly
+- Check browser console for any errors
+
