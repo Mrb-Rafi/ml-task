@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: course-recommender-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FRONTEND_URL
+        sync: false  # Set this after deploying frontend
+    plan: free
+
+  - type: web
+    name: course-recommender-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false  # Set this to your backend URL
+    plan: free
+
